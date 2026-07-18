@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Evaluating mathematical reasoning of foundation models in visual contexts">
+  <meta name="keywords" content="MathVista, Math Vista">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!--1. 这是网页名字 -->
+  <title>PRAC</title>
+
+  <link rel="icon" href="./static/images/icon.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+  <style>
+.gradient-text {
+  background: linear-gradient(90deg, #ff4b5c, #5f99ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title is-bold">
+  <span style="vertical-align: middle">
+    <span style="
+      background: linear-gradient(90deg, #ff4b5c, #5f99ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      font-weight: bold;
+    ">
+      Personalized
+    </span>
+     Image Aesthetic Assessment via Preference-rich Sample Mining and Cohort Merging
+  </span>
+</h1>
+
+          <!-- <h1 class="title is-2 publication-title is-bold"> -->
+
+            <!--2. 图标，标题以及作者等等-->
+            <!-- <img src="static\images\cvpr_fig\tubiao.png" style="width:1em;vertical-align: middle" alt="Logo"/> -->
+            <!-- <span style="vertical-align: middle; white-space: nowrap;">Fine-grained Image Aesthetic Assessment:</span> -->
+        <!-- </h1> -->
+        <!-- <h1 class="title is-2 publication-title is-bold"> -->
+            <!-- <span style="vertical-align: middle">Learning Discriminative Scores from Relative Ranks</span> -->
+        <!-- </h1> -->
+         <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            <a href="https://github.com/yzc-ippl">Zhichao Yang</a><sup>1†</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://github.com/welldky">Tianjiao Gu</a><sup>1†</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://github.com/jachinzhang1">Zhixianhe Zhang</a><sup>1</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://github.com/sxfly99">Xiangfei Sheng</a><sup>1</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://github.com/cpf0079">Pengfei Chen</a><sup>1</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://web.xidian.edu.cn/ldli/">Leida Li</a><sup>1,2*</sup>
+          </span>
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><sup>1</sup>School of Artificial Intelligence, Xidian University</span>
+          &nbsp; <span class="author-block"><sup>2</sup>State Key Laboratory of EMIM, Xidian University</span>
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block" style="font-size: 0.9em;"><sup>†</sup>Equal contribution</span>
+          &nbsp; <span class="author-block" style="font-size: 0.9em;"><sup>*</sup>Corresponding author</span>
+        </div>
+
+        <style>
+  .cvpr-button {
+    background: linear-gradient(90deg, #ff4b5c, #5f99ff); /* 渐变背景色 */
+    color: white;                /* 文字颜色 */
+    border: none;                /* 去掉默认边框 */
+    border-radius: 25px;         /* 圆角 */
+    padding: 10px 25px;          /* 内边距 */
+    font-weight: 700;            /* 加粗 */
+    font-size: 1.1em;            /* 字体大小 */
+    cursor: pointer;             /* 鼠标样式 */
+    display: inline-flex;        /* 让内容水平排列 */
+    align-items: center;         /* 垂直居中 */
+    gap: 8px;                   /* 图标与文字间距 */
+    box-shadow: 0 4px 10px rgba(95, 153, 255, 0.4); /* 阴影 */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .cvpr-button:hover {
+    background: linear-gradient(90deg, #5f99ff, #ff4b5c); /* 悬停时渐变反转 */
+    box-shadow: 0 6px 14px rgba(255, 75, 92, 0.6);
+  }
+
+  .cvpr-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(95, 153, 255, 0.7);
+  }
+</style>
+
+<button class="cvpr-button">
+  ACM MM 2026 🎉
+</button>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://github.com/yzc-ippl/PRAC"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/yzc-ippl/PRAC"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href=" https://github.com/yzc-ippl/PRAC"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🤗</p>
+                      <!-- 🔗 -->
+                  </span>
+                  <span>Model</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 3.这里是第一幅大图的位置 -->
+<section class="section" style="padding-top: 0rem; margin-top: -1rem;">
+  <div class="container" style="margin-bottom: 1vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        
+        <img src="static\images\PRAC.png" alt="介绍图" style="max-width: 94%; height: auto; margin-bottom: 2rem;">
+        
+
+        <!-- 4.摘要 -->
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <b>Personalized Image Aesthetic Assessment (PIAA) </b> aims to predict aesthetic ratings of images that vary across individuals. The aesthetic preferences manifest to different extents across distinct visual stimuli and exhibit cohort-specific patterns. Motivated by the above fact, this paper presents a Multimodal Large Language Model (MLLM)-based approach, which models individual aesthetic preferences by <b>Preference-Rich sample mining and Aesthetically-resonant Cohort merging (PRAC)</b>. Specifically, PRAC first identifies preference-rich samples by analyzing both Collective Controversy and Personalized Deviation of images, maximizing the utility of limited user data. Based upon the preference-rich samples, cross-user preference similarities are measured by comparing preference embeddings. Then, a cohort-based model merging strategy, is proposed by aggregating preference patterns from aesthetically-resonant users, which further enhances the personalization for the target individual. Extensive experiments and comparisons on four benchmark PIAA databases demonstrate the superiority of the proposed PRAC model over the state-of-the-arts.
+        </div>        
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+
+<style>
+  /* 只限制第一个section的宽度和背景 */
+  .hero.fga-dataset {
+    width: 1400px;        /* 固定宽度，可以调整 */
+    margin: 0 auto;      /* 居中 */
+    background-color: #F5F5F5; /* 你想要的背景色 */
+  }
+</style>
+
+
+
+ <!-- 5.数据集部分 -->
+<section class="hero is-light is-small fga-dataset">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista">
+    <!-- 5.1.数据集标题 -->
+    <span style="vertical-align: middle; font-size: 36px; font-variant: normal;">Motivation</span>
+  </h1>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3">Overview</h2> -->
+        <div class="content has-text-justified">
+          <!-- 5.2.数据集介绍 -->
+          <div class="content has-text-justified">
+            <p>
+               <b>Insight-1:</b> Psychological research has demonstrated that some stimuli naturally elicit more active preference responses than others, indicating that <b><span class="gradient-text">not all images are equally informative for modeling aesthetic taste</span></b>.
+              <br>
+               <b>Insight-2:</b> Researches in cognitive aesthetics revealed that aesthetic preferences often cluster among individuals with shared sensibilities—<b><span class="gradient-text">beauty is in the eye of your cohort</span></b>—suggesting that identifying aesthetically-resonant cohort offers valuable insights for target user modeling. 
+          <br>
+            
+            
+            
+            </p>
+          </div>
+
+
+
+            <!-- 5.3.第一幅总括的图-->
+          <div class="content has-text-centered">
+            <img src="static\images\motivation.png" alt="algebraic reasoning" width="60%"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+ <!-- 6.模型部分-->
+<!-- Model SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista">
+    <span style="vertical-align: middle; font-size: 36px; font-variant: normal;">PRAC Model</span>
+  </h1>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+          <!-- <h2 class="title is-3">Overview</h2> -->
+          <div class="content has-text-justified">
+            <p>
+              <!-- 6.1.模型图和简介-->
+              Overview of the proposed <b><span class="gradient-text">PRAC</span></b>. The framework consists of three stages: 
+              <br>
+               (a) <b>Generic Aesthetic Predictor:</b> the MLLM is trained with aesthetic distribution supervision on generic aesthetic data to establish foundational aesthetic understanding.
+              <br>
+               (b) <b>PreferSelect:</b> preference-rich samples are identified through collective controversy and personalized deviation metrics.
+              <br>
+               (c) <b>PreferMerge:</b> the target user’s personalized model is constructed by merging models from aesthetically-resonant cohort.
+            </p>
+            <div class="content has-text-centered">
+              <img src="static\images\model.png" alt="grade-lv" width="100%"/>
+            </div>
+          </div>
+          
+    </div>
+  </div>
+</section>
+
+<!-- Reuslt SECTION -->
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista">
+    <span style="vertical-align: middle; font-size: 36px; font-variant: normal;">Quantitative Results</span>
+  </h1>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+          <!-- <h2 class="title is-3">Overview</h2> -->
+          <div class="content has-text-justified">
+            <p>
+              Performance comparison between the proposed <b><span class="gradient-text">PRAC</span></b> and state-of-the-art PIAA methods on <b><span class="gradient-text">PARA, FlickrAES and AADB</span></b>.
+            </p>
+            <div class="content has-text-centered">
+              <img src="static\images\experiment.png" alt="grade-lv" width="100%"/>
+            </div>
+          </div>
+          
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista">
+    <span style="vertical-align: middle; font-size: 36px; font-variant: normal;">Qualitative Results</span>
+  </h1>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+          <!-- <h2 class="title is-3">Overview</h2> -->
+          <div class="content has-text-justified">
+            <p>
+              A qualitative study using two example users to visualize how the proposed PRAC model performs sample mining and cohort merging, ultimately facilitating personalized aesthetic expression.
+            </p>
+            <div class="content has-text-centered">
+              <img src="static\images\visual.png" alt="grade-lv" width="79%"/>
+            </div>
+          </div>
+          
+    </div>
+  </div>
+</section>
+
+
+
+<!-- RESULTS SECTION -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>
+@article{yang2026personalized,
+  title={Personalized Image Aesthetic Assessment via Preference-rich Sample Mining and Cohort Merging},
+  author={Yang, Zhichao and Gu, tianjiao and Zhang, Zhixianhe and Sheng, Xiangfei and Chen, Pengfei and Li, Leida},
+  booktitle={Proceedings of the 34th ACM International Conference on Multimedia},
+  year={2026}
+}
+    </code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+<p style="font-size: 14px;">
+  This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://dcd-anyedit.github.io/">AnyEdit</a>, licensed under a <a rel="license"
+                                              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+  Commons Attribution-ShareAlike 4.0 International License</a>.
+</p>
+        </div>
+      </div>
+    </div>
+</footer>
+
+</body>
+</html>
