@@ -1,4 +1,5 @@
 <div align="center">
+    <a href="http://arxiv.org/abs/2607.15752"><img src="https://img.shields.io/badge/Arxiv-preprint-red"></a>
     <a href="https://yzc-ippl.github.io/PRAC/"><img src="https://img.shields.io/badge/Homepage-green"></a>
     <a href='https://yzc-ippl.github.io/PRAC/stargazers'><img src='https://img.shields.io/github/stars/yzc-ippl/PRAC.svg?style=social'></a>
 </div>
