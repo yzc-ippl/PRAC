@@ -34,6 +34,9 @@
     <h2 style="border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; margin-bottom: 1em;">News</h2>
     <ul style="list-style-type: none; padding-left: 0;">
         <li style="margin-bottom: 0.8em;">
+            <strong> [2026-08-28]</strong> 🎉</span>🎉</span> Congratulations! Our paper has been accepted for an <strong>Oral Presentation</strong> at ACM MM 2026.
+        </li>
+        <li style="margin-bottom: 0.8em;">
             <strong>[2026-07-10]</strong> 🎉</span>🎉</span>  Our paper, "Personalized Image Aesthetic Assessment via Preference-rich Sample Mining and Cohort Merging", has been accepted to <strong>ACMMM 2026</strong>!
         </li>
     </ul>
