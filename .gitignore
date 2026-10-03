@@ -1,0 +1,32 @@
+# Python and local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+*.log
+
+# Local data and model artifacts
+data/PARA/
+models/
+checkpoints/
+runs/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Generated outputs
+PRAC_RESULTS/
+intermediate_results_*/
+user_lora_pool/
+final_results*/
+logs/
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+

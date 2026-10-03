@@ -1,0 +1,74 @@
+# 
+model:
+  model_path: "models/mPLUG-Owl3-7B"
+  use_lora_adapter: true
+  adapter_path: "runs/para/giaa_adapter"
+  preferential_ids: 
+    - "Terrible"
+    - "Bad"
+    - "Poor"
+    - "Mediocre"
+    - "Fair"
+    - "Good"
+    - "Superior"
+    - "Excellent"
+    - "Outstanding"
+  load_in_8bit: false
+  use_lora: false
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  lora_target_modules: 
+    # - "lm_head"
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    # - "o_proj"
+    # - "gate_proj"
+    # - "up_proj"
+    # - "down_proj"
+
+# 
+data:
+  giaa_train_data_dir: 
+    PARA_image: "data/PARA/imgs"
+    PARA_annotation: "data/PARA/para_giaa_train_discretized.csv"
+  giaa_eval_data_dir: 
+    PARA_image: "data/PARA/imgs"
+    PARA_annotation: "data/PARA/para_giaa_test_discretized.csv"
+  image_size: 224
+  batch_size: 4
+  num_workers: 4
+  # The default PARA release uses nine score levels; adjust this list together with the annotation columns if needed.
+  score_mapping: 
+    - 1.0
+    - 1.5
+    - 2.0
+    - 2.5
+    - 3.0
+    - 3.5
+    - 4.0
+    - 4.5
+    - 5.0
+  val_ratio: 0.1
+  random_seed: 114
+  pin_memory: false
+
+
+# ()
+training:
+  epochs: 130
+  learning_rate: 0.00008 # 0.00001
+  gradient_accumulation_steps: 4
+  warmup_steps: 20
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  logging_steps: 10
+
+# 
+output:
+  lora_pool_dir: "runs/para/lora_pool"
+  piaa_result_dir: "runs/para/merge_results/prefermerge"
+  enabled_users: []
+  testset_reference_user: null
+

@@ -1,0 +1,27 @@
+dataset:
+  csv_path: "data/PARA/annotation/PARA-Images.csv"
+  img_root_dir: "data/PARA/imgs"
+  image_size: 224
+  piaa_size: "10-shot"
+  user_size: 40
+  select_image_from: top
+  # Optional CSV with a `User` column for an exact published split.
+  fixed_test_users_csv: null
+  fixed_test_users_column: User
+
+image_select:
+  user_path: "runs/para/preferselect/preferSelect_0.3"
+
+dataloader:
+  batch_size: 4
+  num_workers: 4
+  pin_memory: true
+  train_size:
+    10-shot: 10
+    100-shot: 100
+  test_size: 50
+  min_images: 
+    10-shot: 60
+    100-shot: 150
+  random_seed: 42
+  random_seed_for_selection: 42

@@ -1,0 +1,21 @@
+dataset:
+  csv_path: "data/PARA/annotation/PARA-Images.csv"
+  img_root_dir: "data/PARA/imgs"
+  image_size: 224
+  piaa_size: "10-shot"
+  user_size: 40
+  user_info_path: "data/user_info_para.json"
+
+dataloader:
+  batch_size: 4
+  num_workers: 4
+  pin_memory: true
+  train_size:
+    10-shot: 10
+    100-shot: 100
+  test_size: 50
+  min_images: 
+    10-shot: 60
+    100-shot: 150
+  random_seed: 42
+  random_seed_for_selection: 42
