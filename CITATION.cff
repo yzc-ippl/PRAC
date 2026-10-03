@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Personalized Image Aesthetic Assessment via Preference-rich Sample Mining and Cohort Merging"
+type: conference-paper
+authors:
+  - family-names: Yang
+    given-names: Zhichao
+  - family-names: Gu
+    given-names: Tianjiao
+  - family-names: Zhang
+    given-names: Zhixianhe
+  - family-names: Sheng
+    given-names: Xiangfei
+  - family-names: Chen
+    given-names: Pengfei
+  - family-names: Li
+    given-names: Leida
+year: 2026
+repository-code: https://github.com/yzc-ippl/PRAC
+url: https://yzc-ippl.github.io/PRAC/
+

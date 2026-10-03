@@ -1,0 +1,19 @@
+# The README installs the CUDA-enabled wheels first. Keep these pins aligned with
+# that installation so a later `pip install -r requirements.txt` is reproducible.
+torch==2.4.1
+torchvision==0.19.1
+transformers>=4.45
+peft>=0.13
+safetensors
+accelerate
+einops
+numpy
+pandas
+scipy
+scikit-learn
+Pillow
+PyYAML
+tqdm
+matplotlib
+seaborn
+
