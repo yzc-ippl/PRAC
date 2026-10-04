@@ -34,6 +34,9 @@
     <h2 style="border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; margin-bottom: 1em;">News</h2>
     <ul style="list-style-type: none; padding-left: 0;">
         <li style="margin-bottom: 0.8em;">
+            <strong>[2026-10-03]</strong> ✨</span>✨</span> The <strong>Code</strong> and <strong>Pre-trained Weights</strong>, are now publicly available.
+        </li>
+        <li style="margin-bottom: 0.8em;">
             <strong> [2026-08-28]</strong> 🎉</span>🎉</span> Congratulations! Our paper has been accepted for an <strong>Oral Presentation</strong> at ACM MM 2026.
         </li>
         <li style="margin-bottom: 0.8em;">
