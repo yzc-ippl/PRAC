@@ -132,9 +132,9 @@ python demo_inference.py \
 └── docs/                        Project page and reproduction guide
 ```
 
-## Usage
+## Re-Training
 
-### 1. Train and evaluate GIAA
+### 1. Generic Aesthetic Predictor
 
 Edit [`configs/giaa_train_config/para.yaml`](configs/giaa_train_config/para.yaml) if the model, data, batch size, or output path differs from the defaults, then run:
 
@@ -148,9 +148,7 @@ The trainer writes LoRA checkpoints below `runs/para/giaa`. Evaluate a selected 
 python mplug3_eval_giaaBackbone.py
 ```
 
-### 2. Mine preference-rich samples with PreferSelect
-
-CCM measures the predictive standard deviation of the generic distribution. PDM measures the KL divergence between generic and user-profile-conditioned distributions.
+### 2. Preference-rich Sample Mining (PreferSelect)
 
 Run the commands below:
 
@@ -161,36 +159,14 @@ python preferSelect_weights_ablation.py
 python preferSelect.py
 ```
 
-### 3. Train the candidate user LoRA pool
+### 3. Aesthetically-resonant Cohort Merging (PreferMerge)
 
-Set `dataset.piaa_size` to `10-shot` or `100-shot` in both [`para_lora_pool.yaml`](configs/prefermerge_config/para_lora_pool.yaml) and [`para_test_users.yaml`](configs/prefermerge_config/para_test_users.yaml). Use a separate output path for each shot setting. Node 1 trains adapters for the candidate users and records the fixed test-user split:
-
-```bash
-PREFERMERGE_NODE=node1 python preferMerge.py
-```
-
-### 4. Build FIM preference embeddings
-
-The FIM stage reinitializes the personalization LoRA with the fixed seed and computes target-to-candidate cosine similarities:
+Run the commands below:
 
 ```bash
 python preferMerge_FIM_fixed.py
-```
-
-### 5. Select an aesthetically resonant cohort
-
-The paper uses cohort size `K=6` and relevance/diversity weight `beta=0.5`. The selection script exposes this parameter as `--beta`:
-
-```bash
 python preferMerge_choice_fast.py --top-n 6 --beta 0.5
-```
-
-### 6. Merge the cohort and personalize target users
-
-Node 2 reads the LoRA pool, FIM matrix, cohort CSV, and target-user data, then evaluates the weighted merge and fine-tunes each target user:
-
-```bash
-PREFERMERGE_NODE=node2 python preferMerge.py
+python preferMerge.py
 ```
 
 ## Citation
