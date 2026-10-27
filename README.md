@@ -64,7 +64,7 @@ pip install -r requirements.txt
 
 ### 2. Download the model and data
 
-Download the [mPLUG-Owl3-7B-241101 base checkpoint](https://huggingface.co/mPLUG/mPLUG-Owl3-7B-241101) and place it at `models/mPLUG-Owl3-7B`, or set `model.model_path` in the YAML files to another compatible local path. Then you can download the pretrained adapter from [HuggingFace](https://huggingface.co/yzc002/PRAC/tree/main) [Baidu Netdisk](https://pan.baidu.com/s/1pK-BDCCJLWci0tawbfYrog?pwd=3rd3).
+Download the [mPLUG-Owl3-7B-241101 base checkpoint](https://huggingface.co/mPLUG/mPLUG-Owl3-7B-241101) and place it at `models/mPLUG-Owl3-7B`, or set `model.model_path` in the YAML files to another compatible local path. Then you can download the pretrained adapter from [HuggingFace](https://huggingface.co/yzc002/PRAC/) [Baidu Netdisk](https://pan.baidu.com/s/1pK-BDCCJLWci0tawbfYrog?pwd=3rd3).
 
 Obtain the PARA dataset from [this link](https://web.xidian.edu.cn/ldli/en/dataset.html) and extract the archive's directory to `data`. The loaders also need derived files. Generate them from the original annotations with:
 
